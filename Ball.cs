@@ -23,8 +23,16 @@ namespace EasyStart
             Turn(180);
 
             if (Keyboard.GetState().IsKeyDown(Keys.Space) && !hasPressedSpace) {
-                speed = 10f;
-                
+                // kolla koordinater för boll och mus
+                float deltaX = Math.Abs(X - mouseState.X);
+                float deltaY = Math.Abs(Y - mouseState.Y);
+                speed = (float)Math.Sqrt(deltaX * deltaX + deltaY * deltaY) / 20f;
+                if (speed > 10)
+                {
+                    speed = 10;
+                }
+
+                hasPressedSpace = true;
             }
             speed -= 0.07f;
             if (speed < 0)
