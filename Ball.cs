@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EasyMonoGame;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace EasyStart
 {
@@ -16,7 +17,10 @@ namespace EasyStart
         {
             time = time + 1;
 
-            if (time > 50)
+            var mouseState = Mouse.GetState();
+            TurnTowards(mouseState.X, mouseState.Y);
+
+            if (time > 100)
             {
                 speed -= 0.07f;
                 if (speed < 0)
@@ -25,6 +29,9 @@ namespace EasyStart
                 }
                 Move(speed);
             }
+
+
+
         }
     
 
