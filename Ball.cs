@@ -42,7 +42,15 @@ namespace EasyStart
             }
             Move(speed);
 
+            if (IsTouching(typeof(Planka))) 
+                {
+                speed = 0;
+                }
 
+            if (IsTouching(typeof(Hole))) 
+            {
+                speed = 0;
+            }
 
         }
     

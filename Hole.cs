@@ -14,7 +14,7 @@ namespace EasyStart
         {
             if (IsTouching(typeof(Ball)))
             {
-                World.ShowText("YAY!!", 100, 100);
+                World.ShowText("YAY!!", 600, 450);
             }
         }
     }
